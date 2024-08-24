@@ -89,3 +89,25 @@
 .max-w-lg {
   max-width: 80vw !important; 
 }
+
+.svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; Adjust based on the height of the container */
+}
+
+.svg {
+  display: block;
+}
+
+.dropdown-menu-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-menu-content.open {
+  opacity: 1;
+  visibility: visible;
+}

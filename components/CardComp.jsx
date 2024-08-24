@@ -1,42 +1,39 @@
-// Card.jsx
 import React from 'react';
+import { Button } from './ui/button';
 
-const CardComp = ({ imageUrl, title, description }) => {
+const CardComp = ({ cards }) => {
   return (
-    <div className="grid grid-rows-12 grid-flow-col gap-1">
-      <div
-        className="row-span-12 col-span-12 border-2 flex items-center justify-center text-xl p-4 w-48 h-96 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://www.shutterstock.com/shutterstock/photos/2294125351/display_1500/stock-photo-digital-nomad-in-bali-a-man-on-a-business-trip-or-vacation-takes-a-coffee-break-in-a-busy-cafe-2294125351.jpg')" }}
-      >
-        {/* Content inside the card, if any */}
-      </div>
-      <div
-        className="row-span-6 col-span-6 border-2 flex items-center justify-center text-xl p-4 w-48 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://www.shutterstock.com/shutterstock/photos/723926227/display_1500/stock-photo-close-up-businessmen-working-at-a-coffee-shop-with-a-document-with-a-smartphone-and-a-laptop-723926227.jpg')" }}
-      >
-        {/* Content inside the card, if any */}
-      </div>
-      <div
-        className="row-span-6 col-span-6 border-2 flex items-center justify-center text-xl p-4 w-48 bg-cover bg-center"
-        style={{ backgroundImage: "url('your-image-url')" }}
-      >
-        {/* Content inside the card, if any */}
-      </div>
-      <div
-        className="row-span-6 col-span-6 border-2 flex items-center justify-center text-xl p-4 w-48 bg-cover bg-center"
-        style={{ backgroundImage: "url('your-image-url')" }}
-      >
-        {/* Content inside the card, if any */}
-      </div>
-      <div
-        className="row-span-6 col-span-6 border-2 flex items-center justify-center text-xl p-4 w-48 bg-cover bg-center"
-        style={{ backgroundImage: "url('your-image-url')" }}
-      >
-        {/* Content inside the card, if any */}
-      </div>
+    <div className="grid grid-rows-12 grid-flow-col gap-3 mx-2">
+      {cards.map((card, index) => {
+        const spanClass = (index + 1) % 5 === 1 ? 'row-span-12 col-span-12' : 'row-span-6 col-span-6 bg-violet-800';
+
+        return (
+          <div
+            key={index}
+            className={`${spanClass} relative border-2 flex items-center justify-center text-xl p-4 w-56 h-full overflow-hidden`}
+          >
+            {card.imageUrl ? (
+              <>
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out transform hover:scale-110"
+                  style={{
+                    backgroundImage: `url(${card.imageUrl})`,
+                  }}
+                ></div>
+                <Button
+                  variant="outline"
+                  className="absolute bottom-4 left-4 z-20"
+                >
+                  View Homes
+                </Button>
+              </>
+            ) : (
+              <p className="text-center text-black">{card.description || 'No description available'}</p>
+            )}
+          </div>
+        );
+      })}
     </div>
-
-
   );
 };
 

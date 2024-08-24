@@ -15,73 +15,117 @@ import CardComp from "@/components/CardComp";
 import HomeCards from "@/components/homeCards";
 import HelpCards from "@/components/HelpCards";
 import Footer from "@/components/Footer";
+import HoverButton from "@/components/HoverButton";
 
 export default function Home() {
-  const cards = [
+  const firstCaro = [
     {
-      id: 1,
-      title: 'Atlanta, GA',
-      image: 'https://www.shutterstock.com/shutterstock/photos/2241867451/display_1500/stock-photo-portrait-of-young-beautiful-asian-woman-holding-stylus-pen-thinking-and-looking-outside-while-2241867451.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '200px',
+      imageUrl: 'https://www.shutterstock.com/shutterstock/photos/2294125351/display_1500/stock-photo-digital-nomad-in-bali-a-man-on-a-business-trip-or-vacation-takes-a-coffee-break-in-a-busy-cafe-2294125351.jpg',
+      title: 'Card 1',
+      description: 'Description for Card 1',
     },
     {
-      id: 2,
-      title: 'Trulia User',
-      content: 'I just moved to the neighborhood 2 years ago...',
-      width: '350px',
-      height: '200px',
+      imageUrl: null, // No image for this card
+      title: 'Card 2',
+      description: 'Description for Card 2 without image',
     },
     {
-      id: 3,
-      title: 'Scottsdale, AZ',
-      image: '/images/scottsdale.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '250px',
+      imageUrl: 'https://img.freepik.com/free-photo/hand-presenting-model-house-home-loan-campaign_53876-104970.jpg?size=626&ext=jpg',
+      title: 'Card 3',
+      description: 'Description for Card 3',
     },
     {
-      id: 4,
-      title: 'Scottsdale, AZ',
-      image: '/images/scottsdale.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '250px',
+      imageUrl: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799725.jpg?size=626&ext=jpg", // No image for this card
+      title: 'Card 4',
+      description: 'Description for Card 4 without image',
     },
     {
-      id: 5,
-      title: 'Scottsdale, AZ',
-      image: '/images/scottsdale.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '250px',
+      imageUrl: 'https://img.freepik.com/free-photo/three-dimensional-house-model_23-2151003972.jpg?size=626&ext=jpg',
+      title: 'Card 5',
+      description: 'Description for Card 5',
+    },
+  ];
+  const secondCaro = [
+    {
+      imageUrl: 'https://www.shutterstock.com/shutterstock/photos/2294125351/display_1500/stock-photo-digital-nomad-in-bali-a-man-on-a-business-trip-or-vacation-takes-a-coffee-break-in-a-busy-cafe-2294125351.jpg',
+      title: 'Card 1',
+      description: 'Description for Card 1',
     },
     {
-      id: 6,
-      title: 'Scottsdale, AZ',
-      image: '/images/scottsdale.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '250px',
+      imageUrl: 'https://img.freepik.com/free-photo/hand-presenting-model-house-home-loan-campaign_53876-104970.jpg?size=626&ext=jpg',
+      title: 'Card 2',
+      description: 'Description for Card 3',
     },
     {
-      id: 7,
-      title: 'Scottsdale, AZ',
-      image: '/images/scottsdale.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '250px',
+      imageUrl: null, // No image for this card
+      title: 'Card 3',
+      description: 'Description for Card 3 without image',
     },
     {
-      id: 8,
-      title: 'Scottsdale, AZ',
-      image: '/images/scottsdale.jpg',
-      description: 'View Homes',
-      width: '300px',
-      height: '250px',
+      imageUrl: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799725.jpg?size=626&ext=jpg", // No image for this card
+      title: 'Card 4',
+      description: 'Description for Card 4 without image',
     },
-    // Add more cards as needed...
+    {
+      imageUrl: 'https://img.freepik.com/free-photo/three-dimensional-house-model_23-2151003972.jpg?size=626&ext=jpg',
+      title: 'Card 5',
+      description: 'Description for Card 5',
+    },
+  ];
+  const thirdCar = [
+    {
+      imageUrl: 'https://www.shutterstock.com/shutterstock/photos/2294125351/display_1500/stock-photo-digital-nomad-in-bali-a-man-on-a-business-trip-or-vacation-takes-a-coffee-break-in-a-busy-cafe-2294125351.jpg',
+      title: 'Card 1',
+      description: 'Description for Card 1',
+    },
+   
+    {
+      imageUrl: 'https://img.freepik.com/free-photo/hand-presenting-model-house-home-loan-campaign_53876-104970.jpg?size=626&ext=jpg',
+      title: 'Card 2',
+      description: 'Description for Card 3',
+    },
+    {
+      imageUrl: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799725.jpg?size=626&ext=jpg", // No image for this card
+      title: 'Card 3',
+      description: 'Description for Card 4 without image',
+    },
+    {
+      imageUrl: null, // No image for this card
+      title: 'Card 4',
+      description: 'Description for Card 4 without image',
+    },
+    {
+      imageUrl: 'https://img.freepik.com/free-photo/three-dimensional-house-model_23-2151003972.jpg?size=626&ext=jpg',
+      title: 'Card 5',
+      description: 'Description for Card 5',
+    },
+  ];
+  const fourthCaro = [
+    {
+      imageUrl: 'https://www.shutterstock.com/shutterstock/photos/2294125351/display_1500/stock-photo-digital-nomad-in-bali-a-man-on-a-business-trip-or-vacation-takes-a-coffee-break-in-a-busy-cafe-2294125351.jpg',
+      title: 'Card 1',
+      description: 'Description for Card 1',
+    },  
+    {
+      imageUrl: 'https://img.freepik.com/free-photo/hand-presenting-model-house-home-loan-campaign_53876-104970.jpg?size=626&ext=jpg',
+      title: 'Card 2',
+      description: 'Description for Card 3',
+    },
+    {
+      imageUrl: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799725.jpg?size=626&ext=jpg", // No image for this card
+      title: 'Card 3',
+      description: 'Description for Card 4 without image',
+    },
+    {
+      imageUrl: 'https://img.freepik.com/free-photo/three-dimensional-house-model_23-2151003972.jpg?size=626&ext=jpg',
+      title: 'Card 4',
+      description: 'Description for Card 5',
+    },
+    {
+      imageUrl: null, // No image for this card
+      title: 'Card 5',
+      description: 'Description for Card 5 without image',
+    },
   ];
 
   return (
@@ -91,7 +135,8 @@ export default function Home() {
           <h1 className="font-semibold text-5xl my-4">Discover a place <br />
             you'll love to live</h1>
           <div>
-            <ToggleGroup type="single">
+            <ToggleGroup type="single" >
+              {/* <HoverButton /> */}
               <ToggleGroupItem value="a" className="text-lg backdrop-blur px-6">Buy</ToggleGroupItem>
               <ToggleGroupItem value="b" className="text-lg backdrop-blur px-6">Rent</ToggleGroupItem>
               <ToggleGroupItem value="c" className="text-lg backdrop-blur px-6">Sold</ToggleGroupItem>
@@ -113,10 +158,15 @@ export default function Home() {
       <div>
         <Carousel className="w-full max-w-full">
           <CarouselContent className="-ml-1">
-            {/* <CardComp cards={cards}/> */}
+            
+          <CardComp cards={firstCaro}/>
+          <CardComp cards={secondCaro}/>
+          <CardComp cards={thirdCar}/>
+          <CardComp cards={fourthCaro}/>
+            
+            {/* <CardComp />
             <CardComp />
-            <CardComp />
-            <CardComp />
+            <CardComp /> */}
 
           </CarouselContent>
           <CarouselPrevious />
